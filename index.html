@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ananta - Temple Management Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🛕 Project Ananta</h1>
+            <p>Smart Temple Management System - Gujarat Pilgrimage Sites</p>
+        </header>
+
+        <div class="dashboard">
+            <!-- Temple Selection -->
+            <div class="card">
+                <h3>📍 Manage Temple</h3>
+                <div class="temple-selection">
+                    <select id="manage-temple-select" onchange="changeManagedTemple()" class="temple-dropdown">
+                        <option value="somnath">🛕 Somnath Temple</option>
+                        <option value="dwarka">🔱 Dwarka Temple</option>
+                        <option value="ambaji">🌸 Ambaji Temple</option>
+                        <option value="pavagadh">⛰️ Pavagadh Temple</option>
+                    </select>
+                    <div id="managed-temple-info" class="temple-info">
+                        <strong>Managing: Somnath Temple</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Crowd Prediction -->
+            <div class="card">
+                <h3>📊 Crowd Prediction</h3>
+                <div class="prediction">
+                    <div class="prediction-item">
+                        <span>Today's Forecast</span>
+                        <strong class="high" id="crowd-forecast">8,500 pilgrims</strong>
+                    </div>
+                    <div class="prediction-item">
+                        <span>Current Count</span>
+                        <strong id="current-count">3,200 pilgrims</strong>
+                    </div>
+                    <div class="prediction-item">
+                        <span>Peak Hour</span>
+                        <strong id="peak-hour">11:00 AM - 2:00 PM</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Live Monitoring -->
+            <div class="card">
+                <h3>👁️ Live Monitoring</h3>
+                <div class="monitoring">
+                    <div class="status-item">
+                        <span>Main Gate Density</span>
+                        <div class="status medium" id="gate-density">Medium</div>
+                    </div>
+                    <div class="status-item">
+                        <span>Sanctum Queue</span>
+                        <div class="status high" id="queue-time">45 mins</div>
+                    </div>
+                    <div class="status-item">
+                        <span>Parking Occupancy</span>
+                        <div class="status low" id="parking-status">60%</div>
+                    </div>
+                    <div class="status-item">
+                        <span>Medical Status</span>
+                        <div class="status low" id="medical-status">Normal</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Emergency Alerts -->
+            <div class="card">
+                <h3>🚨 Alerts & Notifications</h3>
+                <div class="alerts" id="dashboard-alerts">
+                    <div class="alert warning">
+                        ⚠️ High crowd expected in 2 hours
+                    </div>
+                    <div class="alert info">
+                        ℹ️ Medical station 1 is busy
+                    </div>
+                </div>
+                <button class="btn-send-alert" onclick="sendAlert()">
+                    Send Pilgrim Alert
+                </button>
+                
+                <div class="alert-history">
+                    <h4>📋 Sent Alerts History</h4>
+                    <div id="alert-history-list">
+                        <div class="alert-history-item">
+                            <strong>Queue Update:</strong> Waiting time reduced to 45 minutes
+                            <div class="alert-time">2:30 PM</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="card">
+                <h3>⚡ Quick Actions</h3>
+                <div class="actions">
+                    <button class="btn-action" onclick="updateQueueTime()">
+                        Update Queue Time
+                    </button>
+                    <button class="btn-action" onclick="addMedicalStaff()">
+                        Deploy Medical Staff
+                    </button>
+                    <button class="btn-action" onclick="manageTraffic()">
+                        Manage Traffic
+                    </button>
+                    <button class="btn-action" onclick="openPilgrimView()">
+                        View Pilgrim App
+                    </button>
+                </div>
+            </div>
+
+            <!-- Emergency Response -->
+            <div class="card">
+                <h3>🆘 Emergency Response</h3>
+                <div id="emergency-list">
+                    <div class="emergency-item">
+                        No active emergencies
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
