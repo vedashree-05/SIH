@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ananta - Pilgrim App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="pilgrim-app">
+    <div class="app-container">
+        <header class="app-header">
+            <h1>🛕 Ananta</h1>
+            <p>Your Pilgrimage Companion</p>
+        </header>
+
+        <div class="app-content">
+            <!-- Temple Selection -->
+            <div class="app-card">
+                <h3>📍 Select Temple</h3>
+                <div class="temple-selection">
+                    <select id="temple-select" onchange="changeTemple()" class="temple-dropdown">
+                        <option value="somnath">🛕 Somnath Temple</option>
+                        <option value="dwarka">🔱 Dwarka Temple</option>
+                        <option value="ambaji">🌸 Ambaji Temple</option>
+                        <option value="pavagadh">⛰️ Pavagadh Temple</option>
+                    </select>
+                    <div id="temple-info" class="temple-info">
+                        <strong>Somnath Temple</strong><br>
+                        <small>Veraval, Gujarat - Open 6 AM to 9 PM</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Live Queue Status -->
+            <div class="app-card">
+                <h3>⏱️ Live Darshan Time</h3>
+                <div class="queue-info">
+                    <div class="wait-time" id="wait-time">45 minutes</div>
+                    <p>Current waiting time</p>
+                    <div class="temple-specific" id="temple-special">🌅 Sea-side darshan available</div>
+                </div>
+                <button class="btn-book" onclick="bookSlot()">
+                    Book Virtual Slot
+                </button>
+            </div>
+
+            <!-- Temple Information -->
+            <div class="app-card">
+                <h3>ℹ️ Temple Info</h3>
+                <div class="info-list">
+                    <div class="info-item">
+                        <span>Opening Time:</span>
+                        <span id="opening-time">6:00 AM</span>
+                    </div>
+                    <div class="info-item">
+                        <span>Closing Time:</span>
+                        <span id="closing-time">9:00 PM</span>
+                    </div>
+                    <div class="info-item">
+                        <span>Special Darshan:</span>
+                        <span id="special-darshan">Available</span>
+                    </div>
+                    <div class="info-item">
+                        <span>Next Aarti:</span>
+                        <span id="next-aarti">7:00 PM</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Emergency -->
+            <div class="app-card emergency">
+                <h3>🆘 Emergency</h3>
+                <p>Need immediate help?</p>
+                <button class="btn-emergency" onclick="sendEmergency()">
+                    Press for Help
+                </button>
+                <div class="emergency-contacts" id="emergency-contacts">
+                    <small>📞 Security: +91-XXXXX | Medical: +91-XXXXX</small>
+                </div>
+            </div>
+
+            <!-- Notifications -->
+            <div class="app-card">
+                <h3>📢 Temple Updates</h3>
+                <div id="pilgrim-alerts" class="alerts-list">
+                    <div class="alert-item">
+                        🕒 Queue time reduced to 45 mins
+                        <div class="alert-time">2:30 PM</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Facilities -->
+            <div class="app-card">
+                <h3>🏪 Facilities</h3>
+                <div class="facilities-list">
+                    <div class="facility-item">🚻 Restrooms Available</div>
+                    <div class="facility-item">💧 Drinking Water</div>
+                    <div class="facility-item">🛒 Prasad Counter</div>
+                    <div class="facility-item">🏥 First Aid</div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="app-nav">
+            <button onclick="showHome()">🏠 Home</button>
+            <button onclick="showMap()">🗺️ Map</button>
+            <button onclick="showBookings()">🎫 My Bookings</button>
+            <button onclick="showHelp()">❓ Help</button>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
