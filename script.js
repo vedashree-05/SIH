@@ -156,7 +156,7 @@ function manageTraffic() {
 }
 
 function openPilgrimView() {
-    window.open('pilgrim-app', '_blank');
+    window.open('piligrim-app.html', '_blank');
 }
 
 // =============================================
